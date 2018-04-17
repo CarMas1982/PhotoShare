@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoShare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture" translatesAutoresizingMaskIntoConstraints="NO" id="PXC-g9-nL0">
+                                <rect key="frame" x="0.0" y="28" width="375" height="284"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj0-Ml-Gnd">
+                                <rect key="frame" x="17" y="617" width="44" height="30"/>
+                                <state key="normal" title="Scatta"/>
+                                <connections>
+                                    <action selector="scatta:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rl6-EM-2Jf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uss-E4-sfY">
+                                <rect key="frame" x="304" y="617" width="64" height="30"/>
+                                <state key="normal" title="Condividi"/>
+                                <connections>
+                                    <action selector="condividi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zu2-U1-glL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hj0-Ml-Gnd" secondAttribute="bottom" constant="20" id="1z5-wa-tiY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PXC-g9-nL0" secondAttribute="bottom" constant="355" id="2ea-af-h0B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uss-E4-sfY" secondAttribute="trailing" constant="7" id="9xl-K5-NLK"/>
+                            <constraint firstItem="PXC-g9-nL0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BBc-ma-WZW"/>
+                            <constraint firstItem="hj0-Ml-Gnd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="EIH-Dd-XB2"/>
+                            <constraint firstItem="Uss-E4-sfY" firstAttribute="top" secondItem="PXC-g9-nL0" secondAttribute="bottom" constant="305" id="Fri-ae-q8C"/>
+                            <constraint firstItem="PXC-g9-nL0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="M6W-8h-9wb"/>
+                            <constraint firstItem="PXC-g9-nL0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WtC-Ct-mmy"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hj0-Ml-Gnd" secondAttribute="trailing" constant="20" symbolic="YES" id="bv7-hL-tiP"/>
+                            <constraint firstItem="Uss-E4-sfY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="fG8-mJ-De2"/>
+                            <constraint firstItem="hj0-Ml-Gnd" firstAttribute="top" secondItem="PXC-g9-nL0" secondAttribute="bottom" constant="305" id="geg-uV-hjB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uss-E4-sfY" secondAttribute="bottom" constant="20" id="r05-Y1-W8f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="foto" destination="PXC-g9-nL0" id="s2j-ZY-GtT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="picture" width="64" height="64"/>
+    </resources>
 </document>
